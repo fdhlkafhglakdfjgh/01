@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>3D Coin Visualization</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+        #container { 
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="loading">Загрузка изображения...</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        let scene, camera, renderer, coin, controls;
+        let frontTexture, backTexture;
+
+        const COIN_COLOR = 0xE8E8E8;
+
+        // Замените пути к изображениям на свои
+        const FRONT_IMAGE_PATH = '1.png'; // Укажите путь к изображению аверса
+        const BACK_IMAGE_PATH = '2.png';  // Укажите путь к изображению реверса
+
+        function loadImageAsTexture(u
